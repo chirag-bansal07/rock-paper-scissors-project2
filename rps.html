@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rock paper scissors</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="rps.css" />
+  </head>
+  <body>
+    <h1>Rock Paper Scissors</h1>
+
+    <button
+      class="player"
+      onclick="
+    randomGen();
+    gamePlay('Rock')"
+    >
+      <i class="fa-solid fa-hand-back-fist" style="color: #e1d00e"></i>
+    </button>
+
+    <button
+      class="player"
+      onclick="
+    randomGen();
+    gamePlay('paper');"
+    >
+      <i class="fa-solid fa-hand" style="color: #e1d00e"></i>
+    </button>
+
+    <button
+      class="player"
+      onclick="
+    randomGen();
+    gamePlay('scissors');"
+    >
+      <i
+        class="fa-solid fa-hand-scissors fa-rotate-90"
+        style="color: #e1d00e"
+      ></i>
+    </button>
+
+    <p class="js-result result"></p>
+    <p class="game"></p>
+    <p class="scoreDisplay score-css"></p>
+
+    <button
+      class="reset"
+      onclick="
+    score.won=0;
+    score.lost=0;
+    score.tied=0;
+    localStorage.removeItem('score');
+    Game.innerHTML='';
+    Result.innerHTML='';
+    disp.innerHTML=` wins:${score.won} ties:${score.tied} looses:${score.lost}`
+    "
+    >
+      reset score
+    </button>
+  </body>
+  <script src="rps.js">
+  </script>
+</html>
